@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+     <string-array name="spinner_yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+
+     <string-array name="awc_profile_distance_of_hospital">
+        <item>Less than 500m</item>
+        <item>More than 500m</item>
+        <item>More than 1Km</item>
+    </string-array>
+
+
+
+    <string-array name="ownership_of_building_awc_spinner">
+        <item>Open space</item>
+        <item>Own</item>
+        <item>Community</item>
+        <item>Co-Located</item>
+        <item>Panchayat</item>
+        <item>Rented</item>
+    </string-array>
+
+
+
+    <string-array name="type_of_building_awc_spinner">
+        <item>Kuccha</item>
+        <item>Semi kuccha</item>
+        <item>Pucca</item>
+    </string-array>
+
+
+
+    <string-array name="name_of_the_scheme_awc_2_spinner">
+        <item>RIDF</item>
+        <item>NREGA-Convergence</item>
+        <item>NSDP</item>
+        <item>BRGF</item>
+        <item>MPLAD</item>
+        <item>SCP/TSP</item>
+        <item>Others</item>
+    </string-array>
+\
+
+
+    <string-array name="type_of_building_awc_2_spinner">
+        <item>BALA Model</item>
+        <item>Child Friendly Decor</item>
+    </string-array>
+
+
+    <string-array name="type_of_drinking_water_awc_2_spinner">
+        <item>Running Tap Water</item>
+        <item>Tube Well</item>
+        <item>Time Tap Water</item>
+        <item>Others</item>
+    </string-array>
+
+
+
+    <string-array name="source_of_fund_for_water_awc_2_spinner">
+        <item>Zilla Parishad</item>
+        <item>Jal Jeevan Mission</item>
+    </string-array>
+
+
+  <string-array name="water_filter_ro_awc_2_spinner">
+        <item>Water filter</item>
+        <item>RO</item>
+    </string-array>
+
+
+
+    <string-array name="water_availed_from_outside_source_awc_2_spinner">
+        <item>Pond</item>
+        <item>Stream</item>
+        <item>Rivulet</item>
+    </string-array>
+
+
+
+    <string-array name="distance_of_water_facility_from_awc_premises_awc_2_spinner">
+        <item>Less than 50m</item>
+        <item>More than 50m</item>
+    </string-array>
+
+
+
+    <string-array name="toilet_structure_awc_2_spinner">
+        <item>Kuccha</item>
+        <item>Pucca</item>
+    </string-array>
+
+
+
+
+    <string-array name="toilet_condition_awc_2_spinner">
+        <item>Good</item>
+        <item>Bad</item>
+        <item>Dilapidated</item>
+    </string-array>
+
+
+
+
+    <string-array name="type_of_toilet_awc_2_spinner">
+        <item>Pit type</item>
+        <item>Indian</item>
+        <item>Western</item>
+    </string-array>
+
+
+
+    <string-array name="toilet_build_separately_or_not_awc_3_spinner">
+        <item>Within Building</item>
+        <item>Outside Building</item>
+    </string-array>
+
+
+
+
+    <string-array name="source_of_fund_for_const_awc_3_spinner">
+        <item>Zilla Parisad</item>
+        <item>13th FC</item>
+        <item>Others</item>
+    </string-array>
+
+
+
+
+
+
+    <string-array name="structure_of_store_room_awc_3_spinner">
+        <item>Open</item>
+        <item>Covered</item>
+        <item>Tarpulin</item>
+        <item>Cemented roof</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

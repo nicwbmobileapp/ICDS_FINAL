@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define your drawer menu items here -->
+    <item
+        android:id="@+id/nav_item_one"
+        android:title="Item One" />
+    <item
+        android:id="@+id/nav_item_two"
+        android:title="Item Two" />
+</menu>
