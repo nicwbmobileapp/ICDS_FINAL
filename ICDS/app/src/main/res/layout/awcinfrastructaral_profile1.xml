@@ -10,13 +10,14 @@
 
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBarAWCInfrastructure3"
+        android:id="@+id/topAppBar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
+        app:navigationIcon="@drawable/ic_arrow_back"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:title="AWC Infrastructural Profile"
+        app:title="AWC Infrastructural Profile1"
         app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -28,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topAppBarAWCInfrastructure3">
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar">
 
 
         <LinearLayout
@@ -66,12 +67,14 @@
                 android:layout_marginVertical="10dp"/>
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
                 android:text="Name of the project (Block / Municipality)"
                 />
             <EditText
+                android:id="@+id/projectNameEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter project name"
@@ -92,6 +95,7 @@
                 android:text="Name of Gram panchayet"
                 />
             <EditText
+                android:id="@+id/nameOfGpEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Gram panchayat name"
@@ -136,6 +140,7 @@
                 android:text="Name of AWC"
                 />
             <EditText
+                android:id="@+id/nameOfAwcEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter AWC name"
@@ -156,6 +161,7 @@
                 android:text="AWC Code"
                 />
             <EditText
+                android:id="@+id/awcCodeEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter AWC Code"
@@ -260,6 +266,7 @@
                 android:text="Mobile Number"
                 />
             <EditText
+                android:id="@+id/mobileNumEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter mobile number"
@@ -332,6 +339,7 @@
                 android:text="Total Land Available within premises (in decimal)"
                 />
             <EditText
+                android:id="@+id/premisesLandEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter value in Decimale"
@@ -372,7 +380,7 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:textColor="@color/white"
-                android:text="Save and Next"
+                android:text="Next"
                 />
 
 

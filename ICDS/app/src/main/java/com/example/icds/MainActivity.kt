@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         lifecycleScope.launch {
-            delay(2000) // 2000 milliseconds = 2 seconds
+            delay(4000) // 2000 milliseconds = 2 seconds
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
             finish() // Call finish() if you want to close MainActivity

@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_200">@color/card_clr_3</color>
     <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_700">#32939F</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="card_clr_6">#32939F</color>
+    <color name="card_clr_3">#FF018785</color>
+
+
+
+<color name="material_blue_variant">#1976D2</color> <!-- Darker variant -->
 
         <color name="colorPrimary">#6200EE</color>
         <color name="colorPrimaryDark">#3700B3</color>
         <color name="firstCardColor">#ddeedd</color>
         <color name="secondCardColor">#e4d1d1</color>
         <color name="icon_bg">#cab577</color>
+        <color name="material_blue">#2196F3</color> <!-- This is a standard Material Design blue -->
+
+
 
 
 

@@ -71,10 +71,25 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+    implementation(libs.androidx.sqlite)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("com.google.android.material:material:1.6.1")
+
+
+    implementation("com.airbnb.android:lottie:6.0.0") // for showing successfully entered in the database
+
+
+
+
+
+
+
+
+
+
 }
