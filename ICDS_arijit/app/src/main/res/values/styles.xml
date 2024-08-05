@@ -1,0 +1,14 @@
+<resources>
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+<style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/material_blue</item>
+    <!--item name="colorPrimaryVariant">@color/material_blue_variant</item-->
+    <item name="colorOnPrimary">@color/white</item>
+    <item name="colorSecondary">@color/material_blue</item>
+</style>
+</resources>
+
