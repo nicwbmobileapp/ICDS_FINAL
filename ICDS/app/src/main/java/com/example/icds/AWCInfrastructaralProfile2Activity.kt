@@ -189,19 +189,21 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
 
         val saveAndNextAwc2Btn: Button = findViewById(R.id.saveAndNextAwc2Btn)
         saveAndNextAwc2Btn.setOnClickListener {
-            /*if (validateFields()) {
+            if (validateFields()) {
                 updateForm2Data()
+                addAwc2DataToAwcStorage()
                 val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
                 startActivity(intent)
-            }*/
-            val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
-            startActivity(intent)
+            }
+            /*val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
+            startActivity(intent)*/
         }
         val BackBtnForawcinfra2: Button = findViewById(R.id.BackBtnForawcinfra2)
         BackBtnForawcinfra2.setOnClickListener {
+            super.onBackPressed()
 
-                val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)
+//                startActivity(intent)
 
         }
 
@@ -384,6 +386,24 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
         form2Data["toiletStructureVal"] = toiletStructureVal
         form2Data["toiletConditionVal"] = toiletConditionVal
         form2Data["typeOfToiletVal"] = typeOfToiletVal
+
+
+    }
+
+
+    fun addAwc2DataToAwcStorage() {
+        AwcInfraDataStorage.dataMap["nameOfSchemeVal"] = nameOfSchemeVal
+        AwcInfraDataStorage.dataMap["dateOfConstructionBuildingVal"] = tvSelectedDate.text.toString()
+        AwcInfraDataStorage.dataMap["typeOfBuildingVal"] = typeOfBuildingVal
+        AwcInfraDataStorage.dataMap["typeOfDrinkingWaterVal"] = typeOfDrinkingWaterVal
+        AwcInfraDataStorage.dataMap["whetherDrinkingWaterAvlWithinPremisesVal"] = whetherDrinkingWaterAvlWithinPremisesVal
+        AwcInfraDataStorage.dataMap["whetherWaterFilterRoAvlVal"] = whetherWaterFilterRoAvlVal
+        AwcInfraDataStorage.dataMap["sourceOfFundsVal"] = sourceOfFundsVal
+        AwcInfraDataStorage.dataMap["waterAvailedFromOutsideVal"] = waterAvailedFromOutsideVal
+        AwcInfraDataStorage.dataMap["distanceOfWaterFacilityFromAwcPremisesVal"] = distanceOfWaterFacilityFromAwcPremisesVal
+        AwcInfraDataStorage.dataMap["toiletStructureVal"] = toiletStructureVal
+        AwcInfraDataStorage.dataMap["toiletConditionVal"] = toiletConditionVal
+        AwcInfraDataStorage.dataMap["typeOfToiletVal"] = typeOfToiletVal
     }
 }
 

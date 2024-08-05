@@ -14,18 +14,17 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
-        app:navigationIcon="@drawable/ic_arrow_back"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:title="AWC Infrastructural Profile3"
         app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent" />
+    <!--app:navigationIcon="@drawable/ic_arrow_back"-->
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -428,33 +427,38 @@
 
 
 
-
-
-
-
-
-
-
-            <Button
-                android:id="@+id/saveAndNextAwc3Btn"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/white"
-                android:text="Save and Next"
-                />
+                android:gravity="center">
 
+                <Button
+                    android:id="@+id/BackBtnForawcinfra3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    android:text="Back"
+                    android:layout_marginEnd="8dp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#ffff"
-                android:layout_marginVertical="10dp"/>
+                <Button
+                    android:id="@+id/saveAndNextAwc3Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    android:text="Save and Next"/>
+            </LinearLayout>
 
-
-
-
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp"-->
+<!--                android:background="#ffff"-->
+<!--                android:layout_marginVertical="10dp"/>-->
         </LinearLayout>
 
     </ScrollView>

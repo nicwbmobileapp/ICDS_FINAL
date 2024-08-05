@@ -21,6 +21,7 @@
         <color name="secondCardColor">#e4d1d1</color>
         <color name="icon_bg">#cab577</color>
         <color name="material_blue">#2196F3</color> <!-- This is a standard Material Design blue -->
+    <color name="holo_blue_light">#FF33B5E5</color> <!-- Replace with your desired color code -->
 
 
 

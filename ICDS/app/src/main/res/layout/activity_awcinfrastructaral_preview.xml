@@ -14,22 +14,21 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="AWC Infrastructural Profile Preview"
-        app:titleTextColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:titleTextColor="@color/white" />
+    <!-- app:navigationIcon="@drawable/ic_arrow_back" -->
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topAppBarAWCInfrastructure3">
+        app:layout_constraintTop_toBottomOf="@+id/topAppBarAWCInfrastructurePreview">
 
 
         <LinearLayout
@@ -40,264 +39,249 @@
 
             <include
                 android:id="@+id/dist_is_under_sa_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
 
             <include
-                layout="@layout/separate_line"/>
-
-
-
-  <include
                 android:id="@+id/name_0f_the_proj_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
- <include
                 android:id="@+id/name_0f_gram_panchayat_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
 
             <include
-                layout="@layout/separate_line"/>
-
-
- <include
                 android:id="@+id/distance_to_nearest_health_center_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
- <include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/awc_name_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
- <include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/awc_code_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/whether_aww_in_position_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/whether_awh_in_position_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/whether_AWCis_in_main_charge_of_AWW_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/mobile_number_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/ownership_building_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/building_type_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/total_land_in_decimal_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/is_land_govt_reg_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/name_of_scheme_for_construction_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/building_construction_date_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/type_of_building_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/type_of_drinking_water_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/whether_drinking_water_available_in_premises_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/whether_water_filter_ro_available_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/src_of_funds_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/water_outside_source_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
+
             <include
-                layout="@layout/separate_line"/>
-
-
-<include
                 android:id="@+id/water_facility_distance_from_awc_premises_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/toilet_structure_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
+
             <include
-                layout="@layout/separate_line"/>
-<include
                 android:id="@+id/toilet_condition_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/type_of_toilet_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
-            <include
-                layout="@layout/separate_line"/>
+                layout="@layout/common_card_awc_preview" />
 
-<include
+            <include layout="@layout/separate_line" />
+
+            <include
                 android:id="@+id/is_toilet_avl_within_premises_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-<include
                 android:id="@+id/is_toilet_functional_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
 
-             <include
-            layout="@layout/separate_line"/>
+            <include layout="@layout/separate_line" />
 
-<include
+            <include
                 android:id="@+id/is_running_water_avl_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/is_tap_installed_in_toilet_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/is_toilet_child_friendly_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/is_toilet_inside_building_or_outside_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/construction_building_date_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/source_fund_for_const_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/has_separate_store_room_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/structure_store_room_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/kitchen_structure_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-            layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/has_separate_kitchen_shed_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-<include
                 android:id="@+id/condition_of_kitchen_shed_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
+
+            <include layout="@layout/separate_line" />
 
             <include
-                layout="@layout/separate_line"/>
-
-<include
                 android:id="@+id/has_adequate_utensils_awc_inf_prev"
-                layout="@layout/common_card_awc_preview"/>
+                layout="@layout/common_card_awc_preview" />
 
 
             <Button
@@ -306,17 +290,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/colorPrimaryDark"
-                android:textColor="@color/white"
                 android:text="DONE"
-                />
+                android:textColor="@color/white" />
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="#ffff"
-                android:layout_marginVertical="10dp"/>
-
+            <!--            <View-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:background="#ffff"-->
+            <!--                android:layout_marginVertical="10dp"/>-->
 
 
         </LinearLayout>

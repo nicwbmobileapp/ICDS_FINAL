@@ -143,6 +143,14 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        // for hashmap data
+        var token=""
+        var userId =""
+        val bundle = intent.extras
+        if (bundle != null){
+            token = "${bundle.getString("token")}"
+            userId = "${bundle.getString("userId")}"
+        }
 
         // Initialize all the views
         val isDistUnderSaSpinner: Spinner = findViewById(R.id.isDistUnderSaAwcSpinner)
@@ -261,6 +269,31 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // from somnath
+
+           /* DataHolder.DataMap["isDistUnderSaSpinner"] = isDistUnderSaSpinnerVal
+            DataHolder.DataMap["projectNameVal"] = projectNameEt.text.trim().toString()
+            DataHolder.DataMap["gpNameTv"] = gpNameEt.text.trim().toString()
+            DataHolder.DataMap["distOfNearestHospitalVal"] = distOfNearestHospitalVal
+            DataHolder.DataMap["nameOfAWCVal"] = nameOfAwcEt.text.trim().toString()
+            DataHolder.DataMap["awcCodeVal"] = awcCodeEt.text.trim().toString()
+            DataHolder.DataMap["whetherAwwInPositionVal"] = whetherAwwInPositionVal
+            DataHolder.DataMap["whetherAwhInPositionVal"] = whetherAwhInPositionVal
+            DataHolder.DataMap["whetherAwcIsInMainChargeOfAwwVal"] = whetherAwcIsInMainChargeOfAwwVal
+            DataHolder.DataMap["mobileNoVal"] = mobileNumEt.text.trim().toString()
+            DataHolder.DataMap["ownershipOfBuilding"] = ownershipOfBuildingVal
+            DataHolder.DataMap["buildingTypeVal"] = buildingTypeVal
+            DataHolder.DataMap["premisesAvlLandVal"] = premisesLandEt.text.trim().toString()
+            DataHolder.DataMap["whetherLandIsRegisterdFavourOfGovtVal"] = whetherLandIsRegisterdFavourOfGovtVal
+
+
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+            val intent = Intent(this, AWCInfrastructaralProfile2Activity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)*/
+
             // If all fields are valid, proceed to the next activity
             form1Data["isDistUnderSaSpinner"] = isDistUnderSaSpinner.selectedItem.toString()
             form1Data["projectNameVal"] = projectNameEt.text.trim().toString()
@@ -277,8 +310,31 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
             form1Data["premisesAvlLandVal"] = premisesLandEt.text.trim().toString()
             form1Data["whetherLandIsRegisterdFavourOfGovtVal"] = isLandRegisteredInFavourOfGovtAwcSpinner.selectedItem.toString()
 
+
+            // adding all fields data to hashmap
+            AwcInfraDataStorage.dataMap["isDistUnderSaSpinner"] = isDistUnderSaSpinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["projectNameVal"] = projectNameEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["gpNameTv"] = gpNameEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["distOfNearestHospitalVal"] = distanceOfNearestHospitalAwcSpinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["nameOfAWCVal"] = nameOfAwcEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["awcCodeVal"] = awcCodeEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["whetherAwwInPositionVal"] = aww_position_spinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["whetherAwhInPositionVal"] = awh_position_spinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["whetherAwcIsInMainChargeOfAwwVal"] = is_awcis_in_main_charge_of_awm_spinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["mobileNoVal"] = mobileNumEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["ownershipOfBuilding"] = ownership_of_building_awc_spinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["buildingTypeVal"] = building_type_awc_spinner.selectedItem.toString()
+            AwcInfraDataStorage.dataMap["premisesAvlLandVal"] = premisesLandEt.text.trim().toString()
+            AwcInfraDataStorage.dataMap["whetherLandIsRegisterdFavourOfGovtVal"] = isLandRegisteredInFavourOfGovtAwcSpinner.selectedItem.toString()
+
+
+
+
+
             val intent = Intent(this, AWCInfrastructaralProfile2Activity::class.java)
             startActivity(intent)
+
+//            println(AwcInfraDataStorage.dataMap["projectNameVal"])
         }
     }
 

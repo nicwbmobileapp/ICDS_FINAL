@@ -330,6 +330,7 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
         val conditionOfKitchenShadeAwc3Spinner: Spinner = findViewById(R.id.conditionOfKitchenShadeAwc3Spinner)
         val hasAdequateUtensilsAwc3Spinner: Spinner = findViewById(R.id.hasAdequateUtensilsAwc3Spinner)
         val saveAndNextAwc3Btn: Button = findViewById(R.id.saveAndNextAwc3Btn)
+        val backBtnForAwcInfra3: Button = findViewById(R.id.BackBtnForawcinfra3)
 
         // Set the adapters and listeners for the spinners
         setupSpinners()
@@ -339,6 +340,10 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
             showDatePickerDialog()
         }
 
+        backBtnForAwcInfra3.setOnClickListener(){
+            super.onBackPressed()
+        }
+
         saveAndNextAwc3Btn.setOnClickListener {
             updateFormData()
 
@@ -346,24 +351,26 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
            // Toast.makeText(this, formatFormData(), Toast.LENGTH_LONG).show()
 
 
-            if (NetworkUtil.isNetworkAvailable(this)) {// checking for network availability
-                // Proceed with submission
-               /* if (validateFields()) {
+           // if (NetworkUtil.isNetworkAvailable(this)) {// checking for network availability
+                // Proceed with submission for review screen
+               if (validateFields()) {
                     updateFormData()
+                    addAwcForm3DataToAwcStorage()
                     val intent = Intent(this, AWCInfrastructaralPreviewActivity::class.java)
-                    startActivity(intent)
+//                  val intent = Intent(this, SuccessActivity::class.java)
+                   startActivity(intent)
 
                     // for showing success on insertion on database
-                    val intent = Intent(this, SuccessActivity::class.java)
-                    startActivity(intent)
-                }*/
+                    /*val intent = Intent(this, SuccessActivity::class.java)
+                    startActivity(intent)*/
+                }
                 // testing click
-                val intent = Intent(this, SuccessActivity::class.java)
-                startActivity(intent)
-            } else {
+                /*val intent = Intent(this, SuccessActivity::class.java)
+                startActivity(intent)*/
+           /*- } else {
                 // Show error message
                 Toast.makeText(this, "No internet connection available", Toast.LENGTH_SHORT).show()
-            }
+            }*/
 
 
 
@@ -715,7 +722,24 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
         form3Data["awcHasAdequeteUtensils"] = awcHasAdequeteUtensils
     }
 
-    private fun validateFields(): Boolean {
+    private fun addAwcForm3DataToAwcStorage() {
+        AwcInfraDataStorage.dataMap["toiletAvlWithinPremisesVal"] = toiletAvlWithinPremisesVal
+        AwcInfraDataStorage.dataMap["isToiletFunctionalVal"] = isToiletFunctionalVal
+        AwcInfraDataStorage.dataMap["isRunningWaterFacilityAvlVal"] = isRunningWaterFacilityAvlVal
+        AwcInfraDataStorage.dataMap["isTapInstalledInToiletVal"] = isTapInstalledInToiletVal
+        AwcInfraDataStorage.dataMap["isToiletChildFriendlyVal"] = isToiletChildFriendlyVal
+        AwcInfraDataStorage.dataMap["isToiletWithinBuildingVal"] = isToiletWithinBuildingVal
+        AwcInfraDataStorage.dataMap["dobOfConstOfToilet"] = tvSelectedDate.text.toString()
+        AwcInfraDataStorage.dataMap["sourceOfFundForToiletConstVal"] = sourceOfFundForToiletConstVal
+        AwcInfraDataStorage.dataMap["hasSeparateStoreRoomVal"] = hasSeparateStoreRoomVal
+        AwcInfraDataStorage.dataMap["structureOfStoreRoomVal"] = structureOfStoreRoomVal
+        AwcInfraDataStorage.dataMap["descOfKitchenVal"] = descOfKitchenVal
+        AwcInfraDataStorage.dataMap["hasSeparateKitchenShedVal"] = hasSeparateKitchenShedVal
+        AwcInfraDataStorage.dataMap["conditionOfKitchenShed"] = conditionOfKitchenShed
+        AwcInfraDataStorage.dataMap["awcHasAdequeteUtensils"] = awcHasAdequeteUtensils
+    }
+
+    /*private fun validateFields(): Boolean {
         // showToast("nameOfSchemeVal::" + nameOfSchemeVal + "::" + tvSelectedDate.text.toString() + "::" + typeOfBuildingVal)
 
         if (toiletAvlWithinPremisesVal == "Select an option") {
@@ -776,7 +800,73 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
         }
 
         return true
+    }*/
+
+    // field validation start
+
+    private fun validateFields(): Boolean {
+        if (toiletAvlWithinPremisesVal == "Select an option") {
+            showToast("Please select whether the toilet is available within premises.")
+            return false
+        }
+        if (tvSelectedDate.text.toString() == "--/--/--") {
+            showToast("Please select a date.")
+            return false
+        }
+        if (isToiletFunctionalVal == "Select an option") {
+            showToast("Please select whether the toilet is functional.")
+            return false
+        }
+        if (isRunningWaterFacilityAvlVal == "Select an option") {
+            showToast("Please select whether running water facility is available.")
+            return false
+        }
+        if (isTapInstalledInToiletVal == "Select an option") {
+            showToast("Please select whether a tap is installed in the toilet.")
+            return false
+        }
+        if (isToiletChildFriendlyVal == "Select an option") {
+            showToast("Please select whether the toilet is child friendly.")
+            return false
+        }
+        if (isToiletWithinBuildingVal == "Select an option") {
+            showToast("Please select whether the toilet is within the building or built separately.")
+            return false
+        }
+        if (structureOfStoreRoomVal == "Select an option") {
+            showToast("Please select the structure of the store room.")
+            return false
+        }
+        if (sourceOfFundForToiletConstVal == "Select an option") {
+            showToast("Please select the source of funds for toilet construction.")
+            return false
+        }
+        if (hasSeparateStoreRoomVal == "Select an option") {
+            showToast("Please select whether AWC has a separate store room.")
+            return false
+        }
+        if (descOfKitchenVal == "Select an option") {
+            showToast("Please select the description of the kitchen.")
+            return false
+        }
+        if (hasSeparateKitchenShedVal == "Select an option") {
+            showToast("Please select whether AWC has a separate kitchen shed.")
+            return false
+        }
+        if (conditionOfKitchenShed == "Select an option") {
+            showToast("Please select the condition of the kitchen shed.")
+            return false
+        }
+        if (awcHasAdequeteUtensils == "Select an option") {
+            showToast("Please select whether AWC has adequate utensils.")
+            return false
+        }
+
+        return true
     }
+
+
+    // end of field validation
 
     private fun formatFormData(): String {
         val sb = StringBuilder()

@@ -1,3 +1,9 @@
+<!-- res/values/strings.xml -->
 <resources>
-    <string name="app_name">ICDS</string>
+<string name="todo">TODO</string>
+<string name="are_you_sure_you_want_to_log_out_from_the_application">Are you sure you want to log out from the application?</string>
+<string name="yes">Yes</string>
+<string name="no">No</string>
+<string name="resend_otp_string">Resend OTP</string>
+<string name="app_name">ICDS</string>
 </resources>
