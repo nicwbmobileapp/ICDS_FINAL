@@ -45,59 +45,63 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
         doneBtn.setOnClickListener {
             // for saving all the data through retrofit
             if (NetworkUtil.isNetworkAvailable(this)) {
-                val intent = Intent(this, SuccessActivity::class.java)
-                startActivity(intent)
-            }else {
-                // Show error message
-                Toast.makeText(this, "No internet connection available", Toast.LENGTH_SHORT).show()
-            }
-            
-            val gson = Gson()
-            val MapData = gson.toJson(DataHolder.DataMap)
-            //var userId =""
-            val requestModel = RequestModelSubmit(userId, MapData)
+                /*val intent = Intent(this, SuccessActivity::class.java)
+                startActivity(intent)*/
+
+                val gson = Gson()
+                val MapData = gson.toJson(DataHolder.DataMap).toString()
+                //var userId =""
+                val requestModel = RequestModelSubmit(userId, MapData)
 
 
-            val response = ServiceBuilder.buildService(ApiInterfaceSubmit::class.java)
-            response.sendReq(requestModel).enqueue(
-                object : Callback<ResponseModelSubmit> {
-                    override fun onResponse(
-                        call: Call<ResponseModelSubmit>,
-                        response: Response<ResponseModelSubmit>
-                    ) {
+                val response = ServiceBuilder.buildService(ApiInterfaceSubmit::class.java)
+                response.sendReq(requestModel).enqueue(
+                    object : Callback<ResponseModelSubmit> {
+                        override fun onResponse(
+                            call: Call<ResponseModelSubmit>,
+                            response: Response<ResponseModelSubmit>
+                        ) {
 
-                        if(response.code() == 200){
+                            if(response.code() == 200){
 
-                            /* val bundle = Bundle()
-                             bundle.putString("userId", userId)
-                             val intent = Intent(this@LoginActivity, OtpActivity::class.java)
-                             intent.putExtras(bundle)
-                             startActivity(intent)*/
+                                /* val bundle = Bundle()
+                                 bundle.putString("userId", userId)
+                                 val intent = Intent(this@LoginActivity, OtpActivity::class.java)
+                                 intent.putExtras(bundle)
+                                 startActivity(intent)*/
 
-                            Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Data Updated Successfully", Toast.LENGTH_LONG).show()
+                                val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivity::class.java)
+                                startActivity(intent)
+
+                              //  Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Data Updated Successfully", Toast.LENGTH_LONG).show()
+
+
+                            }
+                            Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Response Code:"+response.code().toString(),
+                                Toast.LENGTH_LONG).show()
+                        }
+
+                        override fun onFailure(call: Call<ResponseModelSubmit>, t: Throwable) {
+                            Toast.makeText(this@AWCInfrastructaralPreviewActivity,"Somu"+t.toString(), Toast.LENGTH_LONG).show()
+                            /*Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Data Updated Successfully", Toast.LENGTH_LONG).show()
+
+
+                            val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivity::class.java)
+                            startActivity(intent)
+                            finish()*/
+
 
 
                         }
-                        Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Response Code:"+response.code().toString(),
-                            Toast.LENGTH_LONG).show()
-                    }
-
-                    override fun onFailure(call: Call<ResponseModelSubmit>, t: Throwable) {
-                        //Toast.makeText(this@AWCInfrastructaralPreviewActivity,"Somu"+t.toString(), Toast.LENGTH_LONG).show()
-                        Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Data Updated Successfully", Toast.LENGTH_LONG).show()
-
-
-                        val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivity::class.java)
-                        startActivity(intent)
-                        finish()
-
-
 
                     }
+                )
+            }
 
-                }
-            )
-        }
+
+
+            }
+
         //
 
         // for back button on click

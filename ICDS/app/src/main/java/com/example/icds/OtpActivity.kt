@@ -61,7 +61,7 @@ class OtpActivity : AppCompatActivity() {
                                 val bundle = Bundle()
                                 bundle.putString("token", res.token)
                                 bundle.putString("userId", userId)
-                                val intent = Intent(this@OtpActivity, MainActivity::class.java)
+                                val intent = Intent(this@OtpActivity, DashboardActivity::class.java)
                                 intent.putExtras(bundle)
                                 startActivity(intent)
 

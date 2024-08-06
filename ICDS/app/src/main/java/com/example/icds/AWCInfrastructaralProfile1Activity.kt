@@ -123,7 +123,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
 
-    private val form1Data = HashMap<String, String>()
+    //private val form1Data = HashMap<String, String>()
     private var isDistUnderSaSpinnerVal = "0"
     private var distOfNearestHospitalVal = "0"
     private var whetherAwwInPositionVal = "0"
@@ -295,20 +295,20 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
             startActivity(intent)*/
 
             // If all fields are valid, proceed to the next activity
-            form1Data["isDistUnderSaSpinner"] = isDistUnderSaSpinner.selectedItem.toString()
-            form1Data["projectNameVal"] = projectNameEt.text.trim().toString()
-            form1Data["gpNameTv"] = gpNameEt.text.trim().toString()
-            form1Data["distOfNearestHospitalVal"] = distanceOfNearestHospitalAwcSpinner.selectedItem.toString()
-            form1Data["nameOfAWCVal"] = nameOfAwcEt.text.trim().toString()
-            form1Data["awcCodeVal"] = awcCodeEt.text.trim().toString()
-            form1Data["whetherAwwInPositionVal"] = aww_position_spinner.selectedItem.toString()
-            form1Data["whetherAwhInPositionVal"] = awh_position_spinner.selectedItem.toString()
-            form1Data["whetherAwcIsInMainChargeOfAwwVal"] = is_awcis_in_main_charge_of_awm_spinner.selectedItem.toString()
-            form1Data["mobileNoVal"] = mobileNumEt.text.trim().toString()
-            form1Data["ownershipOfBuilding"] = ownership_of_building_awc_spinner.selectedItem.toString()
-            form1Data["buildingTypeVal"] = building_type_awc_spinner.selectedItem.toString()
-            form1Data["premisesAvlLandVal"] = premisesLandEt.text.trim().toString()
-            form1Data["whetherLandIsRegisterdFavourOfGovtVal"] = isLandRegisteredInFavourOfGovtAwcSpinner.selectedItem.toString()
+            DataHolder.DataMap["isDistUnderSaSpinner"] = isDistUnderSaSpinner.selectedItem.toString()
+            DataHolder.DataMap["projectNameVal"] = projectNameEt.text.trim().toString()
+            DataHolder.DataMap["gpNameTv"] = gpNameEt.text.trim().toString()
+            DataHolder.DataMap["distOfNearestHospitalVal"] = distanceOfNearestHospitalAwcSpinner.selectedItem.toString()
+            DataHolder.DataMap["nameOfAWCVal"] = nameOfAwcEt.text.trim().toString()
+            DataHolder.DataMap["awcCodeVal"] = awcCodeEt.text.trim().toString()
+            DataHolder.DataMap["whetherAwwInPositionVal"] = aww_position_spinner.selectedItem.toString()
+            DataHolder.DataMap["whetherAwhInPositionVal"] = awh_position_spinner.selectedItem.toString()
+            DataHolder.DataMap["whetherAwcIsInMainChargeOfAwwVal"] = is_awcis_in_main_charge_of_awm_spinner.selectedItem.toString()
+            DataHolder.DataMap["mobileNoVal"] = mobileNumEt.text.trim().toString()
+            DataHolder.DataMap["ownershipOfBuilding"] = ownership_of_building_awc_spinner.selectedItem.toString()
+            DataHolder.DataMap["buildingTypeVal"] = building_type_awc_spinner.selectedItem.toString()
+            DataHolder.DataMap["premisesAvlLandVal"] = premisesLandEt.text.trim().toString()
+            DataHolder.DataMap["whetherLandIsRegisterdFavourOfGovtVal"] = isLandRegisteredInFavourOfGovtAwcSpinner.selectedItem.toString()
 
 
             // adding all fields data to hashmap

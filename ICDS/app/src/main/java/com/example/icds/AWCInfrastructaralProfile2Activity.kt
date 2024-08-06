@@ -147,7 +147,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
     private lateinit var datePicker: Button
     private lateinit var tvSelectedDate: TextView
 
-    var form2Data = HashMap<String, String>()
+    //var form2Data = HashMap<String, String>()
 
     var nameOfSchemeVal = "0"
     var typeOfBuildingVal = "0"
@@ -374,18 +374,18 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
 
 
     fun updateForm2Data() {
-        form2Data["nameOfSchemeVal"] = nameOfSchemeVal
-        form2Data["dateOfConstructionBuildingVal"] = tvSelectedDate.text.toString()
-        form2Data["typeOfBuildingVal"] = typeOfBuildingVal
-        form2Data["typeOfDrinkingWaterVal"] = typeOfDrinkingWaterVal
-        form2Data["whetherDrinkingWaterAvlWithinPremisesVal"] = whetherDrinkingWaterAvlWithinPremisesVal
-        form2Data["whetherWaterFilterRoAvlVal"] = whetherWaterFilterRoAvlVal
-        form2Data["sourceOfFundsVal"] = sourceOfFundsVal
-        form2Data["waterAvailedFromOutsideVal"] = waterAvailedFromOutsideVal
-        form2Data["distanceOfWaterFacilityFromAwcPremisesVal"] = distanceOfWaterFacilityFromAwcPremisesVal
-        form2Data["toiletStructureVal"] = toiletStructureVal
-        form2Data["toiletConditionVal"] = toiletConditionVal
-        form2Data["typeOfToiletVal"] = typeOfToiletVal
+        DataHolder.DataMap["nameOfSchemeVal"] = nameOfSchemeVal
+        DataHolder.DataMap["dateOfConstructionBuildingVal"] = tvSelectedDate.text.toString()
+        DataHolder.DataMap["typeOfBuildingVal"] = typeOfBuildingVal
+        DataHolder.DataMap["typeOfDrinkingWaterVal"] = typeOfDrinkingWaterVal
+        DataHolder.DataMap["whetherDrinkingWaterAvlWithinPremisesVal"] = whetherDrinkingWaterAvlWithinPremisesVal
+        DataHolder.DataMap["whetherWaterFilterRoAvlVal"] = whetherWaterFilterRoAvlVal
+        DataHolder.DataMap["sourceOfFundsVal"] = sourceOfFundsVal
+        DataHolder.DataMap["waterAvailedFromOutsideVal"] = waterAvailedFromOutsideVal
+        DataHolder.DataMap["distanceOfWaterFacilityFromAwcPremisesVal"] = distanceOfWaterFacilityFromAwcPremisesVal
+        DataHolder.DataMap["toiletStructureVal"] = toiletStructureVal
+        DataHolder.DataMap["toiletConditionVal"] = toiletConditionVal
+        DataHolder.DataMap["typeOfToiletVal"] = typeOfToiletVal
 
 
     }

@@ -288,7 +288,7 @@ import java.util.*
 class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
     private lateinit var datePicker: Button
     private lateinit var tvSelectedDate: TextView
-    var form3Data = HashMap<String, String>()
+    //var form3Data = HashMap<String, String>()
     var toiletAvlWithinPremisesVal = "0"
     var isToiletFunctionalVal = "0"
     var isRunningWaterFacilityAvlVal = "0"
@@ -706,20 +706,20 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
     }
 
     private fun updateFormData() {
-        form3Data["toiletAvlWithinPremisesVal"] = toiletAvlWithinPremisesVal
-        form3Data["isToiletFunctionalVal"] = isToiletFunctionalVal
-        form3Data["isRunningWaterFacilityAvlVal"] = isRunningWaterFacilityAvlVal
-        form3Data["isTapInstalledInToiletVal"] = isTapInstalledInToiletVal
-        form3Data["isToiletChildFriendlyVal"] = isToiletChildFriendlyVal
-        form3Data["isToiletWithinBuildingVal"] = isToiletWithinBuildingVal
-        form3Data["dobOfConstOfToilet"] = tvSelectedDate.text.toString()
-        form3Data["sourceOfFundForToiletConstVal"] = sourceOfFundForToiletConstVal
-        form3Data["hasSeparateStoreRoomVal"] = hasSeparateStoreRoomVal
-        form3Data["structureOfStoreRoomVal"] = structureOfStoreRoomVal
-        form3Data["descOfKitchenVal"] = descOfKitchenVal
-        form3Data["hasSeparateKitchenShedVal"] = hasSeparateKitchenShedVal
-        form3Data["conditionOfKitchenShed"] = conditionOfKitchenShed
-        form3Data["awcHasAdequeteUtensils"] = awcHasAdequeteUtensils
+        DataHolder.DataMap["toiletAvlWithinPremisesVal"] = toiletAvlWithinPremisesVal
+        DataHolder.DataMap["isToiletFunctionalVal"] = isToiletFunctionalVal
+        DataHolder.DataMap["isRunningWaterFacilityAvlVal"] = isRunningWaterFacilityAvlVal
+        DataHolder.DataMap["isTapInstalledInToiletVal"] = isTapInstalledInToiletVal
+        DataHolder.DataMap["isToiletChildFriendlyVal"] = isToiletChildFriendlyVal
+        DataHolder.DataMap["isToiletWithinBuildingVal"] = isToiletWithinBuildingVal
+        DataHolder.DataMap["dobOfConstOfToilet"] = tvSelectedDate.text.toString()
+        DataHolder.DataMap["sourceOfFundForToiletConstVal"] = sourceOfFundForToiletConstVal
+        DataHolder.DataMap["hasSeparateStoreRoomVal"] = hasSeparateStoreRoomVal
+        DataHolder.DataMap["structureOfStoreRoomVal"] = structureOfStoreRoomVal
+        DataHolder.DataMap["descOfKitchenVal"] = descOfKitchenVal
+        DataHolder.DataMap["hasSeparateKitchenShedVal"] = hasSeparateKitchenShedVal
+        DataHolder.DataMap["conditionOfKitchenShed"] = conditionOfKitchenShed
+        DataHolder.DataMap["awcHasAdequeteUtensils"] = awcHasAdequeteUtensils
     }
 
     private fun addAwcForm3DataToAwcStorage() {
@@ -870,7 +870,7 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
 
     private fun formatFormData(): String {
         val sb = StringBuilder()
-        for ((key, value) in form3Data) {
+        for ((key, value) in DataHolder.DataMap) {
             sb.append("$key: $value\n")
         }
         return sb.toString()
