@@ -331,7 +331,14 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
 
 
 
+            /*val intent = Intent(this, AWCInfrastructaralProfile2Activity::class.java)
+            startActivity(intent)*/
+
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
             val intent = Intent(this, AWCInfrastructaralProfile2Activity::class.java)
+            intent.putExtras(bundle)
             startActivity(intent)
 
 //            println(AwcInfraDataStorage.dataMap["projectNameVal"])

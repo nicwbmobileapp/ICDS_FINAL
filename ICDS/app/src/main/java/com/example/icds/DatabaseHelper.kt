@@ -2,17 +2,25 @@ package com.example.icds
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+/*class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
         private const val DATABASE_NAME = "awc_profile.db"
         private const val DATABASE_VERSION = 1
 
-        const val TABLE_NAME = "awc_infrastructure3"
+        const val TABLE_NAME = "intermediate_data"//""awc_infrastructure3"
         const val COLUMN_ID = "id"
+
+        private const val COLUMN_USER_ID = "userId"
+        private const val COLUMN_DATA_MAP = "dataMap"
+
+
+        const val COLUMN_KEY = "key"
+        const val COLUMN_VALUE = "value"
         const val COLUMN_TOILET_AVL_WITHIN_PREMISES = "toiletAvlWithinPremisesVal"
         const val COLUMN_IS_TOILET_FUNCTIONAL = "isToiletFunctionalVal"
         const val COLUMN_IS_RUNNING_WATER_FACILITY = "isRunningWaterFacilityAvlVal"
@@ -56,7 +64,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     fun insertData(data: Map<String, String>): Boolean {
         val db = this.writableDatabase
-        val contentValues = ContentValues()
+        /*val contentValues = ContentValues()
         contentValues.put(COLUMN_TOILET_AVL_WITHIN_PREMISES, data[COLUMN_TOILET_AVL_WITHIN_PREMISES])
         contentValues.put(COLUMN_IS_TOILET_FUNCTIONAL, data[COLUMN_IS_TOILET_FUNCTIONAL])
         contentValues.put(COLUMN_IS_RUNNING_WATER_FACILITY, data[COLUMN_IS_RUNNING_WATER_FACILITY])
@@ -70,10 +78,104 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         contentValues.put(COLUMN_HAS_SEPARATE_KITCHEN_SHED, data[COLUMN_HAS_SEPARATE_KITCHEN_SHED])
         contentValues.put(COLUMN_CONDITION_OF_KITCHEN_SHED, data[COLUMN_CONDITION_OF_KITCHEN_SHED])
         contentValues.put(COLUMN_AWC_HAS_ADEQUATE_UTENSILS, data[COLUMN_AWC_HAS_ADEQUATE_UTENSILS])
-        contentValues.put(COLUMN_DATE_OF_CONST_OF_TOILET, data[COLUMN_DATE_OF_CONST_OF_TOILET])
+        contentValues.put(COLUMN_DATE_OF_CONST_OF_TOILET, data[COLUMN_DATE_OF_CONST_OF_TOILET])*/
 
         val result = db.insert(TABLE_NAME, null, contentValues)
         db.close()
         return result != -1L // returns true if insert was successful
     }
+
+    // for synching data from local sqllite database to main database in intermediate_data table
+
+    fun insertData(userId: String, dataMap: String): Long {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put(COLUMN_USER_ID, userId)
+        contentValues.put(COLUMN_DATA_MAP, dataMap)
+        return db.insert(TABLE_NAME, null, contentValues)
+    }
+
+    fun getAllData(): Cursor {
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_NAME", null)
+    }
+
+    fun deleteData(id: Int): Int {
+        val db = this.writableDatabase
+        return db.delete(TABLE_NAME, "$COLUMN_ID=?", arrayOf(id.toString()))
+    }
+}*/
+
+
+
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    companion object {
+        private const val DATABASE_NAME = "data_map.db"
+        private const val DATABASE_VERSION = 1
+        const val TABLE_NAME = "data_map"
+        const val COLUMN_KEY = "key"
+        const val COLUMN_VALUE = "value"
+    }
+
+    override fun onCreate(db: SQLiteDatabase?) {
+        val createTableSQL = """
+            CREATE TABLE $TABLE_NAME (
+                $COLUMN_KEY TEXT PRIMARY KEY,
+                $COLUMN_VALUE TEXT
+            )
+        """
+        db?.execSQL(createTableSQL)
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        onCreate(db)
+    }
+
+    fun insertDataMap(dataMap: Map<String, String>): Boolean {
+        val db = this.writableDatabase
+        db.beginTransaction()
+        try {
+            for ((key, value) in dataMap) {
+                val contentValues = ContentValues().apply {
+                    put(COLUMN_KEY, key)
+                    put(COLUMN_VALUE, value)
+                }
+                db.insertWithOnConflict(TABLE_NAME, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE)
+            }
+            db.setTransactionSuccessful()
+            return true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return false
+        } finally {
+            db.endTransaction()
+        }
+    }
+
+    fun getDataMap(): Map<String, String> {
+        val db = this.readableDatabase
+        val cursor = db.query(
+            TABLE_NAME,
+            arrayOf(COLUMN_KEY, COLUMN_VALUE),
+            null, null, null, null, null
+        )
+
+        val dataMap = mutableMapOf<String, String>()
+        with(cursor) {
+            while (moveToNext()) {
+                val key = getString(getColumnIndexOrThrow(COLUMN_KEY))
+                val value = getString(getColumnIndexOrThrow(COLUMN_VALUE))
+                dataMap[key] = value
+            }
+        }
+        cursor.close()
+        return dataMap
+    }
+
+   /*- fun getAllData(): Any {
+
+    }*/
 }
+

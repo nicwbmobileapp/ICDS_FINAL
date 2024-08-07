@@ -171,6 +171,16 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
             insets
         }
 
+
+        var token=""
+        var userId =""
+        val bundle = intent.extras
+        if (bundle != null){
+            token = "${bundle.getString("token")}"
+            userId = "${bundle.getString("userId")}"
+        }
+
+
         initializeSpinner(R.id.nameOfTheSchemeAwc2Spinner, R.array.name_of_the_scheme_awc_2_spinner) { nameOfSchemeVal = it }
         initializeSpinner(R.id.typeOfBuildingAwc2Spinner, R.array.type_of_building_awc_2_spinner) { typeOfBuildingVal = it }
         initializeSpinner(R.id.typeOfDrinkingWaterAwc2Spinner, R.array.type_of_drinking_water_awc_2_spinner) { typeOfDrinkingWaterVal = it }
@@ -190,10 +200,20 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
         val saveAndNextAwc2Btn: Button = findViewById(R.id.saveAndNextAwc2Btn)
         saveAndNextAwc2Btn.setOnClickListener {
             if (validateFields()) {
-                updateForm2Data()
+                /*updateForm2Data()
                 addAwc2DataToAwcStorage()
                 val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
+                startActivity(intent)*/
+
+
+                updateForm2Data()
+                val bundle = Bundle()
+                bundle.putString("token", token)
+                bundle.putString("userId", userId)
+                val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
+                intent.putExtras(bundle)
                 startActivity(intent)
+
             }
             /*val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
             startActivity(intent)*/
@@ -315,7 +335,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
     private fun validateFields(): Boolean {
        // showToast("nameOfSchemeVal::" + nameOfSchemeVal + "::" + tvSelectedDate.text.toString() + "::" + typeOfBuildingVal)
 
-        if (nameOfSchemeVal == "Select an option") {
+        /*if (nameOfSchemeVal == "Select an option") {
             showToast("Please select a scheme.")
             return false
         }
@@ -362,7 +382,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
         if (typeOfToiletVal == "Select an option") {
             showToast("Please select the type of toilet.")
             return false
-        }
+        }*/
         return true
     }
 

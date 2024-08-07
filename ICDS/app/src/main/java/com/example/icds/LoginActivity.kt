@@ -44,11 +44,17 @@ class LoginActivity : AppCompatActivity() {
 
                         if (response.code() == 200) {
 
-                            val bundle = Bundle()
-                            bundle.putString("userId", userId)
-                            val intent = Intent(this@LoginActivity, OtpActivity::class.java)
-                            intent.putExtras(bundle)
-                            startActivity(intent)
+                            val res = response.body();
+                            if (res != null) {
+
+                                val bundle = Bundle()
+                                bundle.putString("userId", userId)
+                                bundle.putString("otp", res.otp)
+                                val intent = Intent(this@LoginActivity, OtpActivity::class.java)
+                                intent.putExtras(bundle)
+                                startActivity(intent)
+
+                            }
                         }
                         Toast.makeText(
                             this@LoginActivity,/*response.message()*/

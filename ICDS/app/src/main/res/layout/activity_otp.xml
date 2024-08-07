@@ -9,6 +9,16 @@
     tools:viewBindingIgnore="true">
 
 
+    <TextView
+        android:id="@+id/otp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="100dp"
+        android:text=""
+        android:textColor="#C10A1E"
+        android:textSize="20dp" />
 
 
     <TextView
@@ -68,10 +78,5 @@
             android:text="@string/resend_otp_string"
             android:textColor="#124A8C"
             android:textSize="16dp" />
-        <TextView
-            android:id="@+id/tv_resend_otp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/resend_otp_string" />
     </LinearLayout>
 </RelativeLayout>

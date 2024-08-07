@@ -313,6 +313,16 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
             insets
         }
 
+
+        var token=""
+        var userId =""
+        val bundle = intent.extras
+        if (bundle != null){
+            token = "${bundle.getString("token")}"
+            userId = "${bundle.getString("userId")}"
+        }
+
+
         datePicker = findViewById(R.id.awc_3_choose_date_btn)
         tvSelectedDate = findViewById(R.id.awc_3_date_view)
 
@@ -353,12 +363,24 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
 
            // if (NetworkUtil.isNetworkAvailable(this)) {// checking for network availability
                 // Proceed with submission for review screen
-               if (validateFields()) {
-                    updateFormData()
+               if (true/*validateFields()*/) {
+
+
+
+                   updateFormData()
+
+                   val bundle = Bundle()
+                   bundle.putString("token", token)
+                   bundle.putString("userId", userId)
+                   val intent = Intent(this, AWCInfrastructaralPreviewActivity::class.java)
+                   intent.putExtras(bundle)
+                   startActivity(intent)
+
+                    /*updateFormData()
                     addAwcForm3DataToAwcStorage()
                     val intent = Intent(this, AWCInfrastructaralPreviewActivity::class.java)
 //                  val intent = Intent(this, SuccessActivity::class.java)
-                   startActivity(intent)
+                   startActivity(intent)*/
 
                     // for showing success on insertion on database
                     /*val intent = Intent(this, SuccessActivity::class.java)
