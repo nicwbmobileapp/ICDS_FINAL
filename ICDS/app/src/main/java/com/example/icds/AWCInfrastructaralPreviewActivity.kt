@@ -43,6 +43,8 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
             userId = "${bundle.getString("userId")}"
         }
 
+
+
         doneBtn.setOnClickListener {
             // for saving all the data through retrofit
             if (NetworkUtil.isNetworkAvailable(this)) {
@@ -98,10 +100,17 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
                     }
                 )
             }else{ // for if network is not available then insert into sqllite
-                insertDataToSQLite(AwcInfraDataStorage.dataMap)
+                // insertDataToSQLite(AwcInfraDataStorage.dataMap)
+
+                /*val dbHelper = DatabaseHelper(this)
+                dbHelper.insertDataMapForAwcInfrastructure(DataHolder.DataMap);
+                Toast.makeText(this, "Data inserted successfully!", Toast.LENGTH_SHORT).show()*/
+               /* val gson = Gson()
+                val MapData = gson.toJson(DataHolder.DataMap).toString()*/
+
+                val dbHelper = DatabaseHelper(this)  // 'this' refers to the Activity context
+                dbHelper.insertHashMap(DataHolder.DataMap)
             }
-
-
 
             }
 
@@ -635,19 +644,19 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
         val dbHelper = DatabaseHelper(this)
         val db = dbHelper.writableDatabase
         db.beginTransaction()
-        try {
+        /*try {
             for ((key, value) in dataMap) {
                 val values = ContentValues().apply {
                     put(DatabaseHelper.COLUMN_KEY, key)
                     put(DatabaseHelper.COLUMN_VALUE, value)
                 }
-                db.insert(DatabaseHelper.TABLE_NAME, null, values)
+                db.insert(DatabaseHelper.TABLE_NAME_AWCINFRA, null, values)
             }
             db.setTransactionSuccessful()
             Toast.makeText(this, "Data saved locally", Toast.LENGTH_LONG).show()
         } finally {
             db.endTransaction()
             db.close()
-        }
+        }*/
     }
 }
