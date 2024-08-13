@@ -57,6 +57,10 @@
         <activity
             android:name=".OtpActivity"
             android:exported="false" />
+        <activity
+            android:name=".SuccessActivityForNonInternet"
+            android:exported="false" />
+
 
         <activity
             android:name=".MainActivity"

@@ -363,7 +363,7 @@ class AWCInfrastructaralProfile3Activity : AppCompatActivity() {
 
            // if (NetworkUtil.isNetworkAvailable(this)) {// checking for network availability
                 // Proceed with submission for review screen
-               if (true/*validateFields()*/) {
+               if (validateFields()) {
 
 
 

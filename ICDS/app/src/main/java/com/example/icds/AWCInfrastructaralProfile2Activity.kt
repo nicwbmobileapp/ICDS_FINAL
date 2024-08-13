@@ -335,7 +335,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
     private fun validateFields(): Boolean {
        // showToast("nameOfSchemeVal::" + nameOfSchemeVal + "::" + tvSelectedDate.text.toString() + "::" + typeOfBuildingVal)
 
-        /*if (nameOfSchemeVal == "Select an option") {
+        if (nameOfSchemeVal == "Select an option") {
             showToast("Please select a scheme.")
             return false
         }
@@ -382,7 +382,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
         if (typeOfToiletVal == "Select an option") {
             showToast("Please select the type of toilet.")
             return false
-        }*/
+        }
         return true
     }
 

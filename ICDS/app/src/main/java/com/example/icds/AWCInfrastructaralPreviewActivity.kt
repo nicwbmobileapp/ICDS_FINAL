@@ -107,9 +107,12 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
                 Toast.makeText(this, "Data inserted successfully!", Toast.LENGTH_SHORT).show()*/
                /* val gson = Gson()
                 val MapData = gson.toJson(DataHolder.DataMap).toString()*/
-
+                Toast.makeText(this, "No internet connection is available !!!", Toast.LENGTH_SHORT).show()
                 val dbHelper = DatabaseHelper(this)  // 'this' refers to the Activity context
                 dbHelper.insertHashMap(DataHolder.DataMap)
+                //Toast.makeText(this, "Data inserted temporarily successfully!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivityForNonInternet::class.java)
+                startActivity(intent)
             }
 
             }

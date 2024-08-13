@@ -10,7 +10,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     companion object {
         private const val DATABASE_NAME = "myDatabase.db"
         private const val DATABASE_VERSION = 1
-        private const val TABLE_NAME = "myTable"
+        private const val TABLE_NAME = "awc_infrastructure"
         private const val COLUMN_KEY = "key"
         private const val COLUMN_VALUE = "value"
     }
