@@ -1,6 +1,7 @@
 package com.example.icds
 
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,10 @@ import com.example.myapp.NetworkUtil
 import com.google.gson.Gson
 import com.example.icds.ResponseModelSubmit
 import com.example.icds.RequestModelSubmit
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -53,6 +58,11 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
 
                 val gson = Gson()
                 val MapData = gson.toJson(DataHolder.DataMap).toString()
+                val bundle = intent.extras
+                if (bundle != null){
+                    token = "${bundle.getString("token")}"
+                    userId = "${bundle.getString("userId")}"
+                }
                 //var userId =""
                 val requestModel = RequestModelSubmit(userId, MapData)
 
@@ -73,7 +83,11 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
                                  intent.putExtras(bundle)
                                  startActivity(intent)*/
 
+                                val bundle = Bundle()
+                                bundle.putString("token", token)
+                                bundle.putString("userId", userId)
                                 val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivity::class.java)
+                                intent.putExtras(bundle)
                                 startActivity(intent)
 
                               //  Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Data Updated Successfully", Toast.LENGTH_LONG).show()
@@ -109,13 +123,62 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
                 val MapData = gson.toJson(DataHolder.DataMap).toString()*/
                 Toast.makeText(this, "No internet connection is available !!!", Toast.LENGTH_SHORT).show()
                 val dbHelper = DatabaseHelper(this)  // 'this' refers to the Activity context
-                dbHelper.insertHashMap(DataHolder.DataMap)
+                dbHelper.insertHashMapAsArray(DataHolder.DataMap)
                 //Toast.makeText(this, "Data inserted temporarily successfully!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@AWCInfrastructaralPreviewActivity, SuccessActivityForNonInternet::class.java)
                 startActivity(intent)
-            }
+
+
+                    /*var dbHelper = DatabaseHelper(this)
+                    dbHelper.insertHashMapAsArray(DataHolder.DataMap)*/
 
             }
+
+
+            // inserting data from sqllite to main database
+
+
+         /*   fun transferData(context: Context, dbHelper: DatabaseHelper) {
+                // Check if the network is available
+               // if (isNetworkAvailable(context)) {
+                    // Get data from SQLite
+                    val dataToTransfer = dbHelper.getAllHashMapArrays().map {
+                        RequestModelSubmit(it.key, it.value)
+                    }
+
+                    // Create Retrofit and ApiService instances
+                    val retrofit = createRetrofitInstance()
+                    val apiService = createApiService(retrofit)
+
+                    // Use Coroutine for network operation
+                    CoroutineScope(Dispatchers.IO).launch {
+                        try {
+                            val response = apiService.sendData(dataToTransfer)
+
+                            // Handle response from the server
+                            if (response.isSuccessful) {
+                                withContext(Dispatchers.Main) {
+                                    println("Data transferred successfully")
+                                    // Optionally, delete data from SQLite after successful transfer
+                                    dbHelper.clearData() // Implement this method if needed
+                                }
+                            } else {
+                                withContext(Dispatchers.Main) {
+                                    println("Failed to transfer data: ${response.errorBody()}")
+                                }
+                            }
+                        } catch (e: Exception) {
+                            withContext(Dispatchers.Main) {
+                                println("Error occurred: ${e.message}")
+                            }
+                        }
+                    }
+                /*} else {
+                    println("No internet connection available.")
+                }*/
+            } */// end of function transferData
+
+            } // end of done button actionlistener
 
         //
 
