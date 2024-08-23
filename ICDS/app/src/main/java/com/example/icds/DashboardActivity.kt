@@ -2,7 +2,6 @@ package com.example.icds
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -19,6 +18,11 @@ class DashboardActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //val anganwadiKendraCard: CardView = findViewById(R.id.awc_card)
+       // val icdsInspectionCard: CardView = findViewById(R.id.)
+
+
 
         var token=""
         var userId =""
@@ -44,5 +48,21 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        /*val icdsinfra = findViewById<CardView>(R.id.awc_card)
+        icdsinfra.setOnClickListener {
+            /*//val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)
+             val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)
+             //val intent = Intent(this, SuccessActivity::class.java)
+             startActivity(intent)*/
+
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+
+            val intent = Intent(this, ICDSInfrastructure1Activity::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+
+        }*/
     }
 }

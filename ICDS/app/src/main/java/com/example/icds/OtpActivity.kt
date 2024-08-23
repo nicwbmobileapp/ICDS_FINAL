@@ -33,7 +33,10 @@ class OtpActivity : AppCompatActivity() {
         }
 
         val otpText: TextView = findViewById <TextView>(R.id.otp)
-        otpText.setText(otp)
+        val et_otpText: TextView = findViewById <TextView>(R.id.et_otp)
+
+       // otpText.setText(otp)
+        et_otpText.setText(otp)
 
        val button: Button = findViewById <Button>(R.id.dialogButtonOK)
         button.setOnClickListener() {

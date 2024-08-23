@@ -62,6 +62,10 @@
         <activity
             android:name=".SuccessActivityForNonInternet"
             android:exported="false" />
+        <activity
+            android:name=".ICDSInfrastructure1Activity"
+            android:exported="false" />
+
 
 
         <activity

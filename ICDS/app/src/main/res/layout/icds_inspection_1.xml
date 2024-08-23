@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ICDSInfrastructure1Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Name of the Visitor -->
+        <TextView
+            android:id="@+id/visitor_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of the Visitor" />
+        <EditText
+            android:id="@+id/visitor_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name" />
+
+        <!-- Designation -->
+        <TextView
+            android:id="@+id/designation_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Designation" />
+        <Spinner
+            android:id="@+id/designation_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <!-- Project name -->
+        <TextView
+            android:id="@+id/project_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project name" />
+        <EditText
+            android:id="@+id/project_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter project name" />
+
+        <!-- AWC Image -->
+        <TextView
+            android:id="@+id/awc_image_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Image" />
+        <ImageView
+            android:id="@+id/awc_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="AWC Image"
+            android:background="@android:color/darker_gray"
+            android:scaleType="centerCrop" />
+
+        <!-- AWC name -->
+        <TextView
+            android:id="@+id/awc_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Name" />
+        <EditText
+            android:id="@+id/awc_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter AWC name" />
+
+        <!-- AWC Code -->
+        <TextView
+            android:id="@+id/awc_code_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Code" />
+        <EditText
+            android:id="@+id/awc_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter AWC code" />
+
+        <!-- AWC Open (Yes / No) -->
+        <TextView
+            android:id="@+id/awc_open_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Open" />
+        <RadioGroup
+            android:id="@+id/awc_open_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+            <RadioButton
+                android:id="@+id/radio_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <!-- AWW name -->
+        <TextView
+            android:id="@+id/aww_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWW Name" />
+        <EditText
+            android:id="@+id/aww_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter AWW name" />
+
+        <!-- AWH name -->
+        <TextView
+            android:id="@+id/awh_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWH Code" />
+        <EditText
+            android:id="@+id/awh_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter AWH Code" />
+
+        <!-- AWW AWH Present -->
+        <TextView
+            android:id="@+id/aww_awh_present_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWW AWH Present" />
+        <Spinner
+            android:id="@+id/aww_awh_present_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <!-- AWW Mobile No -->
+        <TextView
+            android:id="@+id/aww_mobile_no_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWW Mobile No" />
+        <EditText
+            android:id="@+id/aww_mobile_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Enter mobile number"
+            android:importantForAccessibility="yes" />
+
+        <!-- Whether AWW and AWH Aadhar Verified -->
+        <TextView
+            android:id="@+id/aadhar_verified_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aadhar Verified for AWW and AWH" />
+        <Spinner
+            android:id="@+id/aadhar_verified_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+</ScrollView>

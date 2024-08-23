@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    designation_array
     <string-array name="spinner_yes_no">
         <item>Select an option</item>
         <item>Yes</item>
@@ -225,5 +225,10 @@
         <item>3</item>
         <item>4</item>
     </integer-array>
+
+
+
+
+
 
 </resources>

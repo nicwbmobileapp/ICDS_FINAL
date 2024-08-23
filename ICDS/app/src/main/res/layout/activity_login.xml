@@ -84,7 +84,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="28dp"
-      android:text="Integrated Child Development Services"
+      android:text="ICDS Monitoring System"
       android:textColor="@color/white"
       android:textSize="18dp"
       android:textStyle="bold"

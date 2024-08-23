@@ -6,4 +6,48 @@
 <string name="no">No</string>
 <string name="resend_otp_string">Resend OTP</string>
 <string name="app_name">ICDS</string>
+    <string-array name="designation_array">
+        <item>Select an option</item>
+        <item>Designation1</item>
+        <item>Designation2</item>
+    </string-array>
+    <string-array name="aww_awh_present_array">
+        <item>Select an option</item>
+        <item>Both are Present</item>
+        <item>Only AWW Present</item>
+        <item>Only  AWH Present</item>
+    </string-array>
+    <string-array name="aadhar_verified_array">
+        <item>Select an option</item>
+        <item>Verified for both AWW and AWH</item>
+        <item>Verified Only AWW</item>
+        <item>Verified only AWH</item>
+    </string-array>
+
+        <string-array name="water_installation_types">
+            <item>Hand Pump</item>
+            <item>Bore Well</item>
+            <item>Pipe Water</item>
+            <!-- Add other types as needed -->
+        </string-array>
+
+        <string-array name="water_sources">
+            <item>Government Supply</item>
+            <item>Private Supply</item>
+            <item>Others</item>
+            <!-- Add other sources as needed -->
+        </string-array>
+
+
+        <string-array name="stock_durations">
+            <item>Less Than 7 days</item>
+            <item>7-15 days</item>
+            <item>16-22 days</item>
+            <item>23-30 days</item>
+            <item>More than 1 Month</item>
+        </string-array>
+
+
+
+
 </resources>
