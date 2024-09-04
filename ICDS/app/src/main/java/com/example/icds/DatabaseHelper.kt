@@ -67,6 +67,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
@@ -79,6 +80,7 @@ const val DATABASE_VERSION = 1
 const val TABLE_NAME = "awc_infrastructure"
 const val COLUMN_ID = "id"
 const val COLUMN_HASHMAP_JSON_ARRAY = "hashmap_json_array"
+private const val TABLE_LOCATION = "Location"
 
 
 private const val COLUMN_KEY = "key"
@@ -174,6 +176,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             db.endTransaction()
             db.close()
         }
+    }
+
+    // Function to get all locations
+    fun getAllLocations(): Cursor {
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_LOCATION", null)
     }
 
 }

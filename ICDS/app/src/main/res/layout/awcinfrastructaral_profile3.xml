@@ -16,7 +16,7 @@
         android:background="@color/colorPrimaryDark"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:title="AWC Infrastructural Profile3"
+        app:title="AWC Infrastructural Profile 3"
         app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent" />
     <!--app:navigationIcon="@drawable/ic_arrow_back"-->

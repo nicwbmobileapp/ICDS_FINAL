@@ -16,7 +16,7 @@
         android:background="@color/colorPrimaryDark"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:title="AWC Infrastructural Profile1"
+        app:title="AWC Infrastructural Profile 1"
         app:titleTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent" />
     <!-- app:navigationIcon="@drawable/ic_arrow_back"-->
@@ -29,6 +29,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topAppBar">
+
+        <!-- res/layout/location_item.xml -->
+        <!--LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location Name"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewCoordinates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latitude, Longitude"
+                android:textSize="14sp" />
+        </LinearLayout-->
+
 
 
         <LinearLayout

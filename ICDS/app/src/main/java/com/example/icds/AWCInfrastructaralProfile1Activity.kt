@@ -120,6 +120,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
 
@@ -134,6 +136,10 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
     private var premisesAvlLandVal = ""
     private var whetherLandIsRegisterdFavourOfGovtVal = "0"
 
+
+    private lateinit var dbHelper: DatabaseHelper
+    private lateinit var recyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -143,6 +149,16 @@ class AWCInfrastructaralProfile1Activity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // setting the location
+
+      /*  dbHelper = DatabaseHelper(this)
+        val cursor = dbHelper.getAllLocations()
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = LocationAdapter(this, cursor)*/
+
         // for hashmap data
         var token=""
         var userId =""
