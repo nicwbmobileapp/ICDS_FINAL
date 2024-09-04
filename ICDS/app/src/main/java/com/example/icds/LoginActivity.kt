@@ -1,7 +1,9 @@
 package com.example.icds
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
@@ -13,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.icds.DatabaseHelper
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +36,13 @@ class LoginActivity : AppCompatActivity() {
             val Password = (findViewById<EditText>(R.id.passwordEditText)).getText().toString()
             //DummyModel
             val requestModel = RequestModel(userId, Password)
+
+
+            // TALKING SQLLITE DATA INTO DATABASE
+
+
+            //List db_retrieve=DatabaseHelper.getAllHashMapArrays()
+
 
             val response = ServiceBuilder.buildService(ApiInterface::class.java)
             response.sendReq(requestModel).enqueue(
@@ -64,7 +74,8 @@ class LoginActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                        Toast.makeText(this@LoginActivity, "Somu" + t.toString(), Toast.LENGTH_LONG)
+                        Log.d(TAG, "onFailure: Error is ::"+t.toString())
+                        Toast.makeText(this@LoginActivity, "ERROR IS:: " + t.toString(), Toast.LENGTH_LONG)
                             .show()
                     }
 

@@ -2,6 +2,8 @@ package com.example.icds
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -47,6 +49,22 @@ class DashboardActivity : AppCompatActivity() {
             intent.putExtras(bundle)
             startActivity(intent)
 
+        }
+
+        findViewById<TextView>(R.id.icds_infra).setOnClickListener {  // for icds
+            // Create an Intent to start the new Activity
+            Toast.makeText(
+                this@DashboardActivity,/*response.message()*/
+                "Entered icds_infra:",
+                Toast.LENGTH_LONG
+            ).show()
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+
+            val intent = Intent(this, ICDSInfrastructure1::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
         /*val icdsinfra = findViewById<CardView>(R.id.awc_card)
         icdsinfra.setOnClickListener {

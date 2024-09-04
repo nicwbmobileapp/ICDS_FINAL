@@ -1,0 +1,122 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Previous fields go here... -->
+
+        <!-- How long will the stock in Musur dal last -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How long will the stock in Musur dal last"/>
+        <Spinner
+            android:id="@+id/musur_dal_stock_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/musur_dal_stock_duration"/>
+
+        <!-- No of Children found to be spot-fed -->
+        <EditText
+            android:id="@+id/num_children_spot_fed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No of Children found to be spot-fed"
+            android:inputType="number"/>
+
+        <!-- No of women receiving spot-feeding -->
+        <EditText
+            android:id="@+id/num_women_spot_fed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No of women receiving spot-feeding"
+            android:inputType="number"/>
+
+        <!-- Whether the AWC is a Sishu Aloy -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Whether the AWC is a Sishu Aloy"/>
+            <RadioButton
+                android:id="@+id/sishu_aloy_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"/>
+            <RadioButton
+                android:id="@+id/sishu_aloy_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"/>
+        </RadioGroup>
+
+        <!-- Whether Theme based ECCE curriculum is followed -->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Whether Theme based ECCE curriculum is followed"/>
+            <RadioButton
+                android:id="@+id/ecce_curriculum_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"/>
+            <RadioButton
+                android:id="@+id/ecce_curriculum_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"/>
+        </RadioGroup>
+
+        <!-- No of Supushti Diwas held in last 6 months as per register -->
+        <EditText
+            android:id="@+id/num_supushti_diwas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No of Supushti Diwas held in last 6 months as per register"
+            android:inputType="text"/>
+
+        <!-- Whether Annaprashan Divas is celebrated regularly -->
+        <EditText
+            android:id="@+id/annaprashan_divas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Whether Annaprashan Divas is celebrated regularly"
+            android:inputType="text"/>
+
+        <!-- No of visits by higher officials / CDPO in last 6 months -->
+        <EditText
+            android:id="@+id/num_visits_cdpo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No of visits by higher officials / CDPO in last 6 months"
+            android:inputType="number"/>
+
+        <!-- No. of visits by Supervisors in last 6 months -->
+        <EditText
+            android:id="@+id/num_visits_supervisors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No. of visits by Supervisors in last 6 months"
+            android:inputType="number"/>
+
+        <!-- Remarks -->
+        <EditText
+            android:id="@+id/remarks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Remarks"
+            android:inputType="text"/>
+
+    </LinearLayout>
+</ScrollView>

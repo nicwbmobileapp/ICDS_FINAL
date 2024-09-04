@@ -48,6 +48,53 @@
         </string-array>
 
 
+    <string-array name="water_installation_type">
+        <item>Tube-well</item>
+        <item>Tap water</item>
+        <item>Submersible</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="water_source_type">
+        <item>Solar Power Tank</item>
+        <item>Jal Jeevan Mission</item>
+        <item>Electricity Operated</item>
+    </string-array>
+
+    <string-array name="mustard_oil_brand">
+        <!-- Add mustard oil brands here -->
+    </string-array>
+
+    <string-array name="iodized_salt_brand">
+        <!-- Add iodized salt brands here -->
+    </string-array>
+
+    <string-array name="store_room_condition">
+        <item>Clean</item>
+        <item>Unclean</item>
+        <item>Needs Repair</item>
+        <item>Store room Not available</item>
+    </string-array>
+
+    <string-array name="rice_stock_duration">
+        <item>Less than 7 days</item>
+        <item>7-15 days</item>
+        <item>16-22 days</item>
+        <item>23-30 days</item>
+        <item>More than 1 month</item>
+    </string-array>
+
+    <string-array name="musur_dal_stock_duration">
+        <item>Less Than 7 days</item>
+        <item>7-15 days</item>
+        <item>16-22 days</item>
+        <item>23-30 days</item>
+        <item>More than 1 Month</item>
+    </string-array>
 
 
 </resources>
+
+
+
+

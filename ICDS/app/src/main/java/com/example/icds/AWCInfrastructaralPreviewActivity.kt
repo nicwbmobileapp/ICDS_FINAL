@@ -51,6 +51,9 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
 
 
         doneBtn.setOnClickListener {
+
+          /*  Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"If network is available :: "+NetworkUtil.isNetworkAvailable(this),
+                Toast.LENGTH_LONG).show()*/
             // for saving all the data through retrofit
             if (NetworkUtil.isNetworkAvailable(this)) {
                 /*val intent = Intent(this, SuccessActivity::class.java)

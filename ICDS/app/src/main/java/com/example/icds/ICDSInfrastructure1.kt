@@ -1,4 +1,4 @@
-package com.example.icds
+/*package com.example.icds
 
 import android.os.Bundle
 import android.widget.*
@@ -22,7 +22,7 @@ class ICDSInfrastructure1Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.icds_inspection_1)
+        setContentView(R.layout.icds_inspection1)
 
         // Initialize UI elements
         visitorNameEditText = findViewById(R.id.visitor_name)
@@ -68,4 +68,212 @@ class ICDSInfrastructure1Activity : AppCompatActivity() {
             spinner.adapter = adapter
         }
     }
+}*/
+package com.example.icds
+import android.content.Intent
+import android.os.Bundle
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+
+class ICDSInfrastructure1 : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        var token=""
+        var userId =""
+        val bundle = intent.extras
+        if (bundle != null){
+            token = "${bundle.getString("token")}"
+            userId = "${bundle.getString("userId")}"
+        }
+
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.icds_inspection1) // Replace with your actual layout file name
+
+        // Initialize Views
+        val visitorNameEditText: EditText = findViewById(R.id.visitor_name)
+       // val designationSpinner: Spinner = findViewById(R.id.designation_spinner)
+        val projectNameEditText: EditText = findViewById(R.id.project_name)
+        val awcImageView: ImageView = findViewById(R.id.awc_image)
+        val awcNameEditText: EditText = findViewById(R.id.awc_name)
+        val awcCodeEditText: EditText = findViewById(R.id.awc_code)
+        val awcOpenGroup: RadioGroup = findViewById(R.id.awc_open_group)
+        val awwNameEditText: EditText = findViewById(R.id.aww_name)
+        val awhCodeEditText: EditText = findViewById(R.id.awh_code)
+        val awwAhwPresentGroup: RadioGroup = findViewById(R.id.aww_ahw_present_group)
+        val awwMobileNoEditText: EditText = findViewById(R.id.aww_mobile_no)
+        val aadharVerifiedGroup: RadioGroup = findViewById(R.id.aadhar_verified_group)
+        val nextButton: Button = findViewById(R.id.nextBtn)
+
+        // Set up Spinner (if required)
+      /*  val designationAdapter = ArrayAdapter.createFromResource(
+            this, R.array.designation_array, android.R.layout.simple_spinner_item
+        )
+        designationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        designationSpinner.adapter = designationAdapter*/
+
+        // Handle Button Click
+        nextButton.setOnClickListener {
+
+
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+            val intent = Intent(this, ICDSInfrastructure2::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+
+
+
+         /*   // Collect Data
+            val visitorName = visitorNameEditText.text.toString()
+          //  val designation = designationSpinner.selectedItem.toString()
+            val projectName = projectNameEditText.text.toString()
+            val awcName = awcNameEditText.text.toString()
+            val awcCode = awcCodeEditText.text.toString()
+            val awcOpen = when (awcOpenGroup.checkedRadioButtonId) {
+                R.id.awc_open_yes -> "Yes"
+                R.id.awc_open_no -> "No"
+                else -> ""
+            }
+            val awwName = awwNameEditText.text.toString()
+            val awhCode = awhCodeEditText.text.toString()
+            val awwMobileNo = awwMobileNoEditText.text.toString()
+            val awwAhwPresent = when (awwAhwPresentGroup.checkedRadioButtonId) {
+                R.id.verified_both -> "Both are Present"
+                R.id.verified_aww -> "Only AWW Present"
+                R.id.verified_awh -> "Only AWH Present"
+                else -> ""
+            }
+            val aadharVerified = when (aadharVerifiedGroup.checkedRadioButtonId) {
+                R.id.verified_both -> "Verified for both AWW and AWH"
+                R.id.verified_aww -> "Verified Only AWW"
+                R.id.verified_awh -> "Verified Only AWH"
+                else -> ""
+            }*/
+
+            // Handle the data (e.g., send to server, save to SQLite, etc.)
+            // For now, just show a Toast as an example
+           /* Toast.makeText(
+                this,
+                "Visitor Name: $visitorName\nDesignation: $designation\nProject Name: $projectName\nAWC Name: $awcName\nAWC Code: $awcCode\nAWC Open: $awcOpen\nAWW Name: $awwName\nAWH Code: $awhCode\nAWW Mobile No: $awwMobileNo\nAWW AWH Present: $awwAhwPresent\nAadhar Verified: $aadharVerified",
+                Toast.LENGTH_LONG
+            ).show()*/
+        }
+    }
 }
+/*
+
+package com.example.icds // Replace with your actual package name
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
+
+class ICDSInfrastructure1 : AppCompatActivity() {
+
+    // Declare UI elements
+    private lateinit var visitorNameInput: TextInputEditText
+    private lateinit var designationSpinner: Spinner // Assuming you will set up spinner options
+    private lateinit var projectNameInput: TextInputEditText
+    private lateinit var awcNameInput: TextInputEditText
+    private lateinit var awcCodeInput: TextInputEditText
+    private lateinit var awcOpenGroup: RadioGroup
+    private lateinit var awwNameInput: TextInputEditText
+    private lateinit var awhCodeInput: TextInputEditText
+    private lateinit var awwAwhPresentGroup: RadioGroup
+    private lateinit var awwMobileNoInput: TextInputEditText
+    private lateinit var aadharVerifiedGroup: RadioGroup
+    private lateinit var submitButton: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.icds_inspection1) // Replace with your actual layout name
+
+        // Initialize UI elements
+        visitorNameInput = findViewById(R.id.visitor_name)
+        designationSpinner = findViewById(R.id.designation) // Set up spinner with adapter in a real case
+        projectNameInput = findViewById(R.id.project_name)
+        awcNameInput = findViewById(R.id.awc_name)
+        awcCodeInput = findViewById(R.id.awc_code)
+        awcOpenGroup = findViewById(R.id.awc_open_group)
+        awwNameInput = findViewById(R.id.aww_name)
+        awhCodeInput = findViewById(R.id.awh_code)
+        awwAwhPresentGroup = findViewById(R.id.aww_ahw_present_group)
+        awwMobileNoInput = findViewById(R.id.aww_mobile_no)
+        aadharVerifiedGroup = findViewById(R.id.aadhar_verified_group)
+        submitButton = findViewById(R.id.submit_button)
+
+        // Set onClickListener for the Submit button
+        submitButton.setOnClickListener {
+            handleSubmit()
+        }
+    }
+
+    private fun handleSubmit() {
+        val visitorName = visitorNameInput.text.toString()
+        val designation = designationSpinner.selectedItem.toString() // Extract selected designation
+        val projectName = projectNameInput.text.toString()
+        val awcName = awcNameInput.text.toString()
+        val awcCode = awcCodeInput.text.toString()
+        val selectedAwcOpenId = awcOpenGroup.checkedRadioButtonId
+        val awcOpen = if (selectedAwcOpenId != -1) {
+            findViewById<RadioButton>(selectedAwcOpenId).text.toString()
+        } else {
+            "Not Selected"
+        }
+        val awwName = awwNameInput.text.toString()
+        val awhCode = awhCodeInput.text.toString()
+        val selectedAwwAwhPresentId = awwAwhPresentGroup.checkedRadioButtonId
+        val awwAwhPresent = if (selectedAwwAwhPresentId != -1) {
+            findViewById<RadioButton>(selectedAwwAwhPresentId).text.toString()
+        } else {
+            "Not Selected"
+        }
+        val awwMobileNo = awwMobileNoInput.text.toString()
+        val selectedAadharVerifiedId = aadharVerifiedGroup.checkedRadioButtonId
+        val aadharVerified = if (selectedAadharVerifiedId != -1) {
+            findViewById<RadioButton>(selectedAadharVerifiedId).text.toString()
+        } else {
+            "Not Selected"
+        }
+
+        // Checking mandatory fields
+        if (visitorName.isEmpty() || projectName.isEmpty() || awwMobileNo.isEmpty()) {
+            Toast.makeText(this, "Please fill in all mandatory fields.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Handle your logic here (e.g., save data, perform network operation)
+        // For now, let's show a Toast with the collected data
+        Toast.makeText(this, "Visitor Name: $visitorName\nDesignation: $designation\nProject Name: $projectName\nAWC Open: $awcOpen", Toast.LENGTH_LONG).show()
+
+        // Reset the form if needed
+        resetForm()
+    }
+
+    private fun resetForm() {
+        // Clear input fields
+        visitorNameInput.text?.clear()
+        // Set other input fields to their default state or empty
+        projectNameInput.text?.clear()
+        awcNameInput.text?.clear()
+        awcCodeInput.text?.clear()
+        awwNameInput.text?.clear()
+        awhCodeInput.text?.clear()
+        awwMobileNoInput.text?.clear()
+        designationSpinner.setSelection(0) // Reset spinner to the first position
+        awcOpenGroup.clearCheck() // Clear selected radio buttons
+        awwAwhPresentGroup.clearCheck()
+        aadharVerifiedGroup.clearCheck()
+    }
+}
+
+*/

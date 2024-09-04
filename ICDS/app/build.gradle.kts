@@ -85,6 +85,9 @@ dependencies {
 
     implementation ("com.google.android.material:material:1.6.1")
 
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+
 
 
 
