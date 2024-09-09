@@ -69,7 +69,9 @@ class ICDSInfrastructure2 : AppCompatActivity() {
 
 }*/
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -91,9 +93,26 @@ class ICDSInfrastructure3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.icds_inspection3) // Replace with your actual layout name
 
+        val submitICDSBtn = findViewById<Button>(R.id.submitICDSBtn)
+        val BackForICDS3Insp = findViewById<Button>(R.id.BackBtnForICDS3Insp)
 
+        submitICDSBtn.setOnClickListener {
+            /*val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+            val intent = Intent(this, ICDSInfrastructure3::class.java)
+            //intent.putExtras(bundle)
+            startActivity(intent)*/
+        }
 
-
+        BackForICDS3Insp.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("token", token)
+            bundle.putString("userId", userId)
+            val intent = Intent(this, ICDSInfrastructure2::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
     }
 }
 
