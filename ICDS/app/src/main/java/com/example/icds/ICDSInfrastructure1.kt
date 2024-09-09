@@ -101,6 +101,8 @@ class ICDSInfrastructure1 : AppCompatActivity() {
         val awwNameEditText: EditText = findViewById(R.id.aww_name)
         val awhCodeEditText: EditText = findViewById(R.id.awh_code)
         val awwAhwPresentGroup: RadioGroup = findViewById(R.id.aww_ahw_present_group)
+
+
         val awwMobileNoEditText: EditText = findViewById(R.id.aww_mobile_no)
         val aadharVerifiedGroup: RadioGroup = findViewById(R.id.aadhar_verified_group)
         val nextButton: Button = findViewById(R.id.nextBtn)

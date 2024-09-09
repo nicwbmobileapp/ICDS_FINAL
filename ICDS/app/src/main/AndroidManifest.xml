@@ -68,6 +68,9 @@
         <activity
             android:name=".ICDSInfrastructure2"
             android:exported="false" />
+        <activity
+            android:name=".ICDSInfrastructure3"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"

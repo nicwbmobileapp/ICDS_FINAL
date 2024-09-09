@@ -197,7 +197,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
         tvSelectedDate = findViewById(R.id.awc_2_date_view)
         datePicker.setOnClickListener { showDatePickerDialog() }
 
-        val saveAndNextAwc2Btn: Button = findViewById(R.id.saveAndNextAwc2Btn)
+        val saveAndNextAwc2Btn: Button = findViewById(R.id.saveAndNextICDSBtn)
         saveAndNextAwc2Btn.setOnClickListener {
             if (validateFields()) {
                 /*updateForm2Data()
@@ -218,7 +218,7 @@ class AWCInfrastructaralProfile2Activity : AppCompatActivity() {
             /*val intent = Intent(this, AWCInfrastructaralProfile3Activity::class.java)
             startActivity(intent)*/
         }
-        val BackBtnForawcinfra2: Button = findViewById(R.id.BackBtnForawcinfra2)
+        val BackBtnForawcinfra2: Button = findViewById(R.id.BackBtnForICDSInsp)
         BackBtnForawcinfra2.setOnClickListener {
             super.onBackPressed()
 

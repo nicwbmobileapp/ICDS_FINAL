@@ -7,6 +7,17 @@
     android:fillViewport="true"
     tools:context=".ICDSInfrastructure1">
 
+    <!--com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="ICDS INSPECTION 1"
+        app:titleTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent" /-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
