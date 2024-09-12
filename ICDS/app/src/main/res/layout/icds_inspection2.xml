@@ -12,6 +12,16 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ICDS Infrastructure Inspection 2"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
         <!-- No Of Children in the Age group (6m-6 yrs) -->
         <EditText
             android:id="@+id/num_children_6m_6yrs"

@@ -37,6 +37,7 @@ object ServiceBuilder {
         .build()
 
     private val retrofit = Retrofit.Builder()
+        // for nicnet server 10.192.162.32 10.173.18.52
         .baseUrl("http://10.0.2.2:80") // For Android Emulator
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)

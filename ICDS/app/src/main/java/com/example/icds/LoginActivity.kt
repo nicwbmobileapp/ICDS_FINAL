@@ -66,11 +66,11 @@ class LoginActivity : AppCompatActivity() {
 
                             }
                         }
-                        Toast.makeText(
+                       /* Toast.makeText(
                             this@LoginActivity,/*response.message()*/
                             "Response Code:" + response.code().toString(),
                             Toast.LENGTH_LONG
-                        ).show()
+                        ).show()*/
                     }
 
                     override fun onFailure(call: Call<ResponseModel>, t: Throwable) {

@@ -97,8 +97,8 @@ class AWCInfrastructaralPreviewActivity : AppCompatActivity() {
 
 
                             }
-                            Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Response Code:"+response.code().toString(),
-                                Toast.LENGTH_LONG).show()
+                            /*Toast.makeText(this@AWCInfrastructaralPreviewActivity,/*response.message()*/"Response Code:"+response.code().toString(),
+                                Toast.LENGTH_LONG).show()*/
                         }
 
                         override fun onFailure(call: Call<ResponseModelSubmit>, t: Throwable) {

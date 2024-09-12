@@ -7,22 +7,21 @@
     android:fillViewport="true"
     tools:context=".ICDSInfrastructure1">
 
-    <!--com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:title="ICDS INSPECTION 1"
-        app:titleTextColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent" /-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:orientation="vertical">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ICDS Infrastructure Inspection 1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
 
         <!-- Visitor Name -->
         <com.google.android.material.textfield.TextInputLayout

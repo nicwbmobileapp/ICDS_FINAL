@@ -79,16 +79,16 @@ class OtpActivity : AppCompatActivity() {
 
 
                         }else {
-                            Toast.makeText(
+                           /* Toast.makeText(
                                 this@OtpActivity,/*response.message()*/
                                 "Response Code:" + response.code().toString(),
                                 Toast.LENGTH_LONG
-                            ).show()
+                            ).show()*/
                         }
                     }
 
                     override fun onFailure(call: Call<ResponseModelOtp>, t: Throwable) {
-                        Toast.makeText(this@OtpActivity,"Somu"+t.toString(), Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@OtpActivity,"OTP NOT RECEIVED:"+t.toString(), Toast.LENGTH_LONG).show()
                     }
 
                 }

@@ -136,7 +136,7 @@
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
                  android:layout_weight="3"
-                 android:text="Type of Building"
+                 android:text="Type of Drinking Water"
                  android:textSize="16sp"
                  android:layout_marginEnd="8dp"/>
 

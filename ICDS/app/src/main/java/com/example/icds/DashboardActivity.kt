@@ -53,11 +53,11 @@ class DashboardActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.icds_infra).setOnClickListener {  // for icds
             // Create an Intent to start the new Activity
-            Toast.makeText(
+            /*Toast.makeText(
                 this@DashboardActivity,/*response.message()*/
                 "Entered icds_infra:",
                 Toast.LENGTH_LONG
-            ).show()
+            ).show()*/
             val bundle = Bundle()
             bundle.putString("token", token)
             bundle.putString("userId", userId)
