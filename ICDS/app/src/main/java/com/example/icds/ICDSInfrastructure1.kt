@@ -74,7 +74,89 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.graphics.Bitmap
+import android.provider.MediaStore
+import android.widget.*
 
+// for camera picture taking
+
+class ICDSInfrastructure1 : AppCompatActivity() {
+
+    // Request code for camera intent
+    private val CAMERA_REQUEST_CODE = 100
+
+    // Declare all UI elements
+    private lateinit var visitorNameEditText: EditText
+    private lateinit var projectNameEditText: EditText
+    private lateinit var awcImageView: ImageView
+    private lateinit var awcNameEditText: EditText
+    private lateinit var awcCodeEditText: EditText
+    private lateinit var awcOpenRadioGroup: RadioGroup
+    private lateinit var awwNameEditText: EditText
+    private lateinit var awhNameEditText: EditText
+    private lateinit var awwMobileNoEditText: EditText
+    private lateinit var nextButton: Button
+    private lateinit var takePictureButton: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.icds_inspection1)
+
+        // Initialize UI elements
+        visitorNameEditText = findViewById(R.id.visitor_name)
+        projectNameEditText = findViewById(R.id.project_name)
+        awcImageView = findViewById(R.id.awc_image)
+        awcNameEditText = findViewById(R.id.awc_name)
+        awcCodeEditText = findViewById(R.id.awc_code)
+        awcOpenRadioGroup = findViewById(R.id.awc_open_group)
+        awwNameEditText = findViewById(R.id.aww_name)
+        awhNameEditText = findViewById(R.id.awh_code)
+        awwMobileNoEditText = findViewById(R.id.aww_mobile_no)
+        nextButton = findViewById(R.id.nextBtn)
+        takePictureButton = findViewById(R.id.take_picture_button)
+
+        // Set up camera button click listener
+        takePictureButton.setOnClickListener {
+            // Launch the camera
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (cameraIntent.resolveActivity(packageManager) != null) {
+                startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE)
+            }
+        }
+
+        // Handle Next button click event
+        nextButton.setOnClickListener {
+            // Collect data and move to the next screen
+            val token = intent.extras?.getString("token") ?: ""
+            val userId = intent.extras?.getString("userId") ?: ""
+
+            val bundle = Bundle().apply {
+                putString("token", token)
+                putString("userId", userId)
+            }
+
+            val intent = Intent(this, ICDSInfrastructure2::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
+    }
+
+    // Handle the result from camera intent
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            // Get the captured image as a Bitmap
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            // Set the image to ImageView
+            awcImageView.setImageBitmap(imageBitmap)
+        }
+    }
+}
+
+
+/*
 class ICDSInfrastructure1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -163,7 +245,7 @@ class ICDSInfrastructure1 : AppCompatActivity() {
             ).show()*/
         }
     }
-}
+}*/
 /*
 
 package com.example.icds // Replace with your actual package name

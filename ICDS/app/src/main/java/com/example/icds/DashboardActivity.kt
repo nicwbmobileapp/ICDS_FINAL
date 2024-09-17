@@ -51,6 +51,11 @@ class DashboardActivity : AppCompatActivity() {
 
         }
 
+
+        findViewById<TextView>(R.id.listView).setOnClickListener {
+            //Toast.makeText(this, "entered listview", Toast.LENGTH_SHORT).show()
+        }
+
         findViewById<TextView>(R.id.icds_infra).setOnClickListener {  // for icds
             // Create an Intent to start the new Activity
             /*Toast.makeText(
@@ -66,6 +71,14 @@ class DashboardActivity : AppCompatActivity() {
             intent.putExtras(bundle)
             startActivity(intent)
         }
+
+        val awcHistory = findViewById<CardView>(R.id.awc_history)
+
+        awcHistory.setOnClickListener(){
+            /*val intent = Intent(this, AwcHistoryListActivity::class.java)
+            startActivity(intent)*/
+        }
+
         /*val icdsinfra = findViewById<CardView>(R.id.awc_card)
         icdsinfra.setOnClickListener {
             /*//val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)

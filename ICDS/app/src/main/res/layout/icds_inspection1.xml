@@ -63,12 +63,27 @@
             android:text="AWC Image (in jpeg/jpg)"
             android:layout_marginTop="16dp"/>
 
+        <!--ImageView
+            android:id="@+id/awc_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="16dp" /-->
         <ImageView
             android:id="@+id/awc_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@android:color/darker_gray"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:contentDescription="AWC Image"/>
+
+        <Button
+            android:id="@+id/take_picture_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Take Picture" />
+
 
         <!-- AWC Name -->
         <com.google.android.material.textfield.TextInputLayout

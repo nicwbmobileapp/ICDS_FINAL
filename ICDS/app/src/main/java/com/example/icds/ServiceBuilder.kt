@@ -25,8 +25,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-
 object ServiceBuilder {
     private val logging = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -37,8 +35,8 @@ object ServiceBuilder {
         .build()
 
     private val retrofit = Retrofit.Builder()
-        // for nicnet server 10.192.162.32 10.173.18.52
-        .baseUrl("http://10.0.2.2:80") // For Android Emulator
+        // for nicnet server 10.192.162.32 10.173.18.52 for emulator 10.0.2.2:80 192.168.29.210:80
+        .baseUrl("http://10.198.162.32") // For local
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
