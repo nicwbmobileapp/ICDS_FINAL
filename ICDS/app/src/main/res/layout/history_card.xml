@@ -40,7 +40,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="start"
-                    android:text="Text 1"
+                    android:text="ICDS001"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -51,7 +51,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="end"
-                    android:text="Text 2"
+                    android:text="Text"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -62,7 +62,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 >
-
                 <Button
                     android:id="@+id/seeMoreButton"
                     android:layout_width="wrap_content"
