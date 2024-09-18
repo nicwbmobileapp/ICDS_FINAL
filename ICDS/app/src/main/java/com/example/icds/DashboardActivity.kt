@@ -34,6 +34,9 @@ class DashboardActivity : AppCompatActivity() {
             userId = "${bundle.getString("userId")}"
         }
 
+
+
+
         val awcInfCard = findViewById<CardView>(R.id.awc_card)
         awcInfCard.setOnClickListener {
            /*//val intent = Intent(this, AWCInfrastructaralProfile1Activity::class.java)
@@ -75,8 +78,8 @@ class DashboardActivity : AppCompatActivity() {
         val awcHistory = findViewById<CardView>(R.id.awc_history)
 
         awcHistory.setOnClickListener(){
-            /*val intent = Intent(this, AwcHistoryListActivity::class.java)
-            startActivity(intent)*/
+            val intent = Intent(this, AwcHistoryListActivity::class.java)
+            startActivity(intent)
         }
 
         /*val icdsinfra = findViewById<CardView>(R.id.awc_card)

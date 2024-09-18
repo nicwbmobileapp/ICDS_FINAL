@@ -13,8 +13,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -24,9 +22,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ICDS"
-        tools:targetApi="31"
-        android:usesCleartextTraffic="true">
-
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".AwcHistoryDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AwcHistoryListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AwcHistoryListActivityAwcHistoryListActivity"
+            android:exported="false" />
         <activity
             android:name=".AWCInfrastructaralPreviewActivity"
             android:exported="false" />
@@ -39,7 +45,8 @@
         <activity
             android:name=".AWCInfrastructaralProfile1Activity"
             android:exported="false" />
-        <!--activity
+        <!--
+activity
             android:name=".awcinfrastructure1Activity"
             android:exported="false" />
         <activity
@@ -50,7 +57,8 @@
             android:exported="false" />
         <activity
             android:name=".icds_inspection_form1Activity"
-            android:exported="false" /-->
+            android:exported="false" /
+        -->
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
@@ -78,7 +86,6 @@
         <activity
             android:name=".ICDSInfrastructure3"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
