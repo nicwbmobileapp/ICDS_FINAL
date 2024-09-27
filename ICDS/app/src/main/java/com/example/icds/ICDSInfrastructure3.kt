@@ -72,10 +72,6 @@ class ICDSInfrastructure2 : AppCompatActivity() {
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
 class ICDSInfrastructure3 : AppCompatActivity() {
@@ -93,7 +89,7 @@ class ICDSInfrastructure3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.icds_inspection3) // Replace with your actual layout name
 
-        val submitICDSBtn = findViewById<Button>(R.id.submitICDSBtn)
+        val submitICDSBtn = findViewById<Button>(R.id.nextICDSBtn)
         val BackForICDS3Insp = findViewById<Button>(R.id.BackBtnForICDS3Insp)
 
         submitICDSBtn.setOnClickListener {

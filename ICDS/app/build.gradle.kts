@@ -70,6 +70,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     implementation(libs.androidx.sqlite)
     androidTestImplementation(libs.androidx.junit)

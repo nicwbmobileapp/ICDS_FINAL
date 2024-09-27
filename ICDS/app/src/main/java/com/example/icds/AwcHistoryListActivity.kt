@@ -29,7 +29,5 @@ class AwcHistoryListActivity : AppCompatActivity() {
             val intent = Intent(this, AwcHistoryDetailsActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }
