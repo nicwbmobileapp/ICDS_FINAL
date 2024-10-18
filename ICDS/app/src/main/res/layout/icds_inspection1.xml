@@ -14,47 +14,67 @@
         android:orientation="vertical">
 
         <!-- Heading -->
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ICDS Infrastructure Inspection 1"
+            android:text="ICDS Infrastructure Inspection"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"/>
 
         <!-- Visitor Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of the Visitor"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name of the Visitor">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/visitor_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Designation -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Designation"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Designation">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/designation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Project Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Name"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Project Name">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/project_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWC Image -->
@@ -62,22 +82,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AWC Image (in jpeg/jpg)"
-            android:layout_marginTop="16dp"/>
-
-        <!--ImageView
-            android:id="@+id/awc_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@android:color/darker_gray"
-            android:layout_marginBottom="16dp" /-->
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"/>
         <ImageView
             android:id="@+id/awc_image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@android:color/darker_gray"
             android:layout_marginBottom="16dp"
-            android:contentDescription="AWC Image"/>
-
+            android:contentDescription="Placeholder for AWC Image"/>
         <Button
             android:id="@+id/take_picture_button"
             android:layout_width="wrap_content"
@@ -85,27 +98,40 @@
             android:layout_marginTop="8dp"
             android:text="Take Picture" />
 
-
         <!-- AWC Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Name"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="AWC Name">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/awc_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWC Code -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWC Code"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="AWC Code">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/awc_code"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWC Open -->
@@ -113,7 +139,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AWC Open"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"/>
         <RadioGroup
             android:id="@+id/awc_open_group"
             android:layout_width="wrap_content"
@@ -132,25 +159,39 @@
         </RadioGroup>
 
         <!-- AWW Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWW Name"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="AWW Name">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/aww_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWH Code -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWH Code"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="AWH Code">
+            android:layout_height="wrap_content">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/awh_code"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWW AWH Present -->
@@ -158,7 +199,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AWW AWH Present"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp" />
         <RadioGroup
             android:id="@+id/aww_ahw_present_group"
             android:layout_width="wrap_content"
@@ -183,7 +225,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="AWW Mobile No (Mandatory)"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"/>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -191,7 +234,9 @@
                 android:id="@+id/aww_mobile_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AWW and AWH Aadhar Verified -->
@@ -199,7 +244,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Whether AWW and AWH Aadhar Verified"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"/>
         <RadioGroup
             android:id="@+id/aadhar_verified_group"
             android:layout_width="wrap_content"

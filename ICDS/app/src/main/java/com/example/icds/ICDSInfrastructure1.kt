@@ -117,13 +117,24 @@ class ICDSInfrastructure1 : AppCompatActivity() {
         takePictureButton = findViewById(R.id.take_picture_button)
 
         // Set up camera button click listener
-        takePictureButton.setOnClickListener {
+       /* takePictureButton.setOnClickListener {
             // Launch the camera
+            Toast.makeText(this, "Launching Camera !!!!", Toast.LENGTH_SHORT).show()
             val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             if (cameraIntent.resolveActivity(packageManager) != null) {
                 startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE)
+            }*/
+
+            takePictureButton.setOnClickListener {
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                if (cameraIntent.resolveActivity(packageManager) != null) {
+                    Toast.makeText(this, "Launching Camera !!!!", Toast.LENGTH_SHORT).show()
+                    startActivityForResult(cameraIntent, CAMERA_REQUEST_CODE)
+                } else {
+                    Toast.makeText(this, "No camera app found", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
+
 
         // Handle Next button click event
         nextButton.setOnClickListener {
